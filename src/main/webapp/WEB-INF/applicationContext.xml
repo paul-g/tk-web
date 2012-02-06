@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+  <bean id="basecampComponent" class="org.restlet.ext.spring.SpringComponent">
+    <property name="defaultTarget" ref="basecampAppliction" />
+  </bean>
+
+  <bean id="basecampAppliction" class="org.paulg.tkweb.application.TimeKeeperApplication">
+    <property name="root" ref="router" />
+  </bean>
+
+  <!--  Define the router -->
+  <bean name="router" class="org.restlet.ext.spring.SpringBeanRouter" />
+  
+  <!-- Define all the routes -->
+  <bean name="/hello" class="org.paulg.tkweb.resource.demo.TimeKeeperResource" scope="prototype" autowire="byName" />
+</beans>
