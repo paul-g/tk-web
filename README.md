@@ -71,7 +71,7 @@ If these are available, you can simply run the build:
 
 ### 4. Verify
 
-You should now be able to point a browser at the url `http://localhost:5000/basecamp/app/` and start the Ext Js application.
+You should now be able to point a browser at the url `http://localhost:8080/tkweb/app/` and start the Ext Js application.
 
 **Note!** 
 The ports and URL are subject to change (although i'll do my best to updated the url above).
