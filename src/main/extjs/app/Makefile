@@ -11,6 +11,7 @@ sencha-build:
 	mkdir $(WEBAPP_HOME)/ext-4.0
 	cp -r ext-4.0/ $(WEBAPP_HOME)
 	rm app.jsb3
+	rm -f .tmp*
 	
 clean:
 	cd $(WEBAPP_HOME) && rm -rf *
