@@ -1,4 +1,4 @@
-package org.paulg.tkweb;
+package org.tkweb;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

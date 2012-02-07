@@ -1,4 +1,4 @@
-package org.paulg.tkweb.resource.demo;
+package org.tkweb.resource.demo;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.paulg.tkweb.application;
+package org.tkweb.application;
 
 import org.restlet.Application;
 

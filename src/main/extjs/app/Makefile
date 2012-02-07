@@ -12,6 +12,8 @@ sencha-build:
 	cp -r ext-4.0/ $(WEBAPP_HOME)
 	rm app.jsb3
 	rm -f .tmp*
+	cp -r Tkweb/ $(WEBAPP_HOME)
+	cp -r data/ $(WEBAPP_HOME)
 	
 clean:
 	cd $(WEBAPP_HOME) && rm -rf *
