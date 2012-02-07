@@ -1,18 +1,28 @@
 TimeKeeper Web (Server + JS Client)
 ==============================
 
-(Readme is out of date, will be updated soon)
-
 # Installation
 --------------------------------
+
+The web server is written in Java and uses the RESTlet framework. It is designed to work on Apache Tomcat 6.
+
+The JavaScript client is built using ExtJs.
+
+The build process uses GNU make, maven and Sencha SDK.
+
+Below are the steps required to get started.
 
 ### 1. Get the code
 
 From here, duh :P
   
-### 2. Download ExtJs
+### 2. Add ExtJs
 
-To run, download ext-4.0 and copy the following (from the ext-4.0 folder) in a folder named ext-4.0 under the project root:
+The client is built using the Ext JavaScript library.
+
+Download the [library](http://www.sencha.com/products/extjs/download/) and extract the archive to a folder, for example ext-4.0.
+
+To build the client you must copy the following (from ext-4.0):
 
 1. The folders src and resources
 
@@ -20,9 +30,11 @@ To run, download ext-4.0 and copy the following (from the ext-4.0 folder) in a f
 
 3. ext.js
 
-The final directory structure should look like this:
+Copy these to a folder named - exactly:) - ext-4.0 under src/main/extjs/app (the source folder for the JS client).
 
-	+tk-client
+The final directory structure should exactly match the one shown below:
+
+	+src/main/extjs/app
 		-app.js
 		-index.html
 		-app
@@ -40,5 +52,32 @@ The final directory structure should look like this:
 
 ### 3. Deploy
 
-You can then use the provided Makefile (after configuring it to match your local setup) to deploy onto an application server. 
-This step is required to enable the Ajax functionality.
+You can now use the provided top level Makefile to:
+
+1. Build the ExtJs client
+
+2. Build the server
+
+3. Deploy the project and start the Tomcat server
+
+Step 1 requires the sencha SDK (available [here](http://www.sencha.com/products/sdk-tools)).
+More precisely, the command `sencha` should be available from your command line.
+
+Steps 2 and 3 require maven, which should be able to download all the required dependencies and plugins (including Tomcat 6).
+
+If these are available, you can simply run the build: 
+
+`make`
+
+### 4. Verify
+
+You should now be able to point a browser at the url `http://localhost:5000/basecamp/app/` and start the Ext Js application.
+
+**Note!** 
+The ports and URL are subject to change (although i'll do my best to updated the url above).
+
+If you have issues:
+
+1. look into pom.xml to check the port tomcat is running on
+
+2. check src/main/webapp/WEB-INF/web.xml or src/main/webapp/WEB-inf/app-servlet.xml to check the servlet mappings
