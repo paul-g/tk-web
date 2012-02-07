@@ -24,7 +24,18 @@
 
   <servlet-mapping>
     <servlet-name>basecamp</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>app</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>app</servlet-name>
+    <url-pattern>/index.html</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>
