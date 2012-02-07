@@ -3,3 +3,4 @@
 .settings
 target/
 ext-4.0/
+src/main/webapp/app
