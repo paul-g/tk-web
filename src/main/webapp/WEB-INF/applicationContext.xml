@@ -14,5 +14,8 @@
   <bean name="router" class="org.restlet.ext.spring.SpringBeanRouter" />
   
   <!-- Define all the routes -->
-  <bean name="/hello" class="org.tkweb.resource.demo.TimeKeeperResource" scope="prototype" autowire="byName" />
+  <bean name="/tasks" class="org.tkweb.resource.task.TasksResource" scope="prototype" autowire="byName" />
+  
+  <bean name="/tasks/{itemName}" class="org.tkweb.resource.task.TaskResource" scope="prototype" autowire="byName" />
+  
 </beans>
