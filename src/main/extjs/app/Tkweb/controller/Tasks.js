@@ -1,7 +1,7 @@
 Ext.define('Tkweb.controller.Tasks', {
     extend: 'Ext.app.Controller',
     
-    views: ['task.List', 'task.Edit'],
+    views: ['task.List', 'task.Edit', 'task.Create'],
     
     stores: ['Tasks'],
     
@@ -13,26 +13,35 @@ Ext.define('Tkweb.controller.Tasks', {
                 itemdblclick: this.editUser
             },
             'taskedit button[action=save]': {
-                click: this.updateUser
+                click: this.updateTask
+            },
+            'taskcreate button[action=add]': {
+                click: this.addTask
             }
         });
     },
     
     editUser: function(grid, record){
         var view = Ext.widget('taskedit');
-        
         view.down('form').loadRecord(record);
-        
-        console.log('Double clicked on ' + record.get('name'));
     },
     
-    updateUser: function(button){
+    updateTask: function(button){
         var win = button.up('window');
-		var form = win.down('form');
-		var record = form.getRecord();
-		var values = form.getValues();
+        var form = win.down('form');
+        var record = form.getRecord();
+        var values = form.getValues();
         record.set(values);
         win.close();
-		this.getTasksStore().sync();
+        this.getTasksStore().sync();
+    },
+    
+    addTask: function(button){
+        var form = button.up('taskcreate');
+        var record = Ext.create('Tkweb.model.Task');
+        record.set(form.getValues());
+        this.getTasksStore().add(record);
+        this.getTasksStore().sync();
+        form.reset();
     }
 });

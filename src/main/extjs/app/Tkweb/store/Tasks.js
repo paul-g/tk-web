@@ -6,6 +6,7 @@ Ext.define('Tkweb.store.Tasks', {
     proxy: {
         type: 'ajax',
         api: {
+			create: 'data/createTask.json',
             read: 'data/tasks.json',
             update: 'data/updateTasks.json'
         },
