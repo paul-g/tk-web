@@ -17,8 +17,8 @@ Ext.define('Tkweb.view.task.Edit', {
             },
             items: [{
                 xtype: 'textfield',
-                name: 'id',
-                fieldLabel: 'id'
+                name: 'time',
+                fieldLabel: 'Time'
             }, {
                 xtype: 'textfield',
                 name: 'description',

@@ -9,7 +9,8 @@ Ext.define('Tkweb.view.task.List' ,{
     initComponent: function() {
         this.columns = [
             {header: 'Id',  dataIndex: 'id',  flex: 1},
-            {header: 'Description', dataIndex: 'description', flex: 1}
+			{header: 'Time', dataIndex: 'time', flex: 1},
+            {header: 'Description', dataIndex: 'description', flex: 3}
         ];
 
         this.callParent(arguments);

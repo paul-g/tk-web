@@ -17,7 +17,7 @@ Ext.define('Tkweb.view.task.Create', {
         allowBlank: false
     }, {
         fieldLabel: 'Time',
-        name: 'id',
+        name: 'time',
         allowBlank: false
     }],
     initComponent: function(){
