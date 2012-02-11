@@ -10,7 +10,8 @@ Ext.define('Tkweb.controller.Tasks', {
     init: function(){
         this.control({
             'tasklist': {
-                itemdblclick: this.editUser
+                itemdblclick: this.editUser,
+				edit: this.updateEdit,
             },
             'taskedit button[action=save]': {
                 click: this.updateTask
@@ -25,6 +26,12 @@ Ext.define('Tkweb.controller.Tasks', {
         var view = Ext.widget('taskedit');
         view.down('form').loadRecord(record);
     },
+	
+	updateEdit: function(editor,e ) {
+		console.log('Handling edit');
+	    //e.record.commit();
+		this.getTasksStore().sync();
+	},
     
     updateTask: function(button){
         var win = button.up('window');

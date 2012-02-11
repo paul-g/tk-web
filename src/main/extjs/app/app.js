@@ -12,28 +12,22 @@ function main(){
 
     Ext.create('Ext.container.Viewport', {
         layout: 'fit',
+        
         items: {
             xtype: 'panel',
             title: 'TimeKeeper 0.1',
-            layout: 'hbox',
+            layout: {
+                type: 'hbox',
+                align: 'stretch',
+            },
             bodyPadding: 5,
             items: [{
-                xtype: 'panel',
-				flex: 3,
-                items: [{
-                    xtype: 'tasklist',
-                    title: 'To Do',
-                    padding: 5,
-                }, {
-                    xtype: 'tasklist',
-                    title: 'Done',
-                    padding: 5,
-                }]
+                xtype: 'tasklist',
+				flex: 3
             }, {
                 xtype: 'panel',
                 title: 'Add Task',
-                padding: 5,
-                layout: 'fit',
+                padding: '0 0 0 5',
                 items: {
                     xtype: 'taskcreate',
                 },
@@ -41,5 +35,4 @@ function main(){
             }]
         }
     });
-    
 }
