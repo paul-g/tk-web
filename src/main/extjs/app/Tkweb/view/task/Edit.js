@@ -23,7 +23,11 @@ Ext.define('Tkweb.view.task.Edit', {
                 xtype: 'textfield',
                 name: 'description',
                 fieldLabel: 'Description'
-            }]
+            }, {
+				xtype: 'textfield',
+				name: 'done',
+				fieldLabel: 'Done'
+			}]
         }];
         
         this.buttons = [{

@@ -14,8 +14,8 @@ public class TimeKeeperApplication extends Application {
 	public TimeKeeperApplication() {
 		super();
 		System.out.println("Starting application!");
-		addTask(new Task("First task", 10));
-		addTask(new Task("Second task", 30));
+		addTask(new Task("First task", 10, true));
+		addTask(new Task("Second task", 30, false));
 	}
 
 	public static List<Task> getTasks() {

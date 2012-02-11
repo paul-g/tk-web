@@ -10,10 +10,13 @@ public class Task {
 	private String description;
 	@Expose
 	private int time;
+	@Expose
+	private boolean done;
 
-	public Task(String description, int time) {
+	public Task(String description, int time, boolean done) {
 		this.description = description;
 		this.time = time;
+		this.done = done;
 	}
 
 	public Task(int id, String description, int time) {

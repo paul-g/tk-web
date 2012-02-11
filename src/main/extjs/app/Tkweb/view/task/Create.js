@@ -19,6 +19,10 @@ Ext.define('Tkweb.view.task.Create', {
         fieldLabel: 'Time',
         name: 'time',
         allowBlank: false
+    }, {
+        fieldLabel: 'Done',
+        name: 'done',
+        allowBlank: false
     }],
     initComponent: function(){
         this.callParent();
