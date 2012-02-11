@@ -74,10 +74,10 @@ If these are available, you can simply run the build:
 You should now be able to point a browser at the url `http://localhost:8080/tkweb/app/` and start the Ext Js application.
 
 **Note!** 
-The ports and URL are subject to change (although i'll do my best to updated the url above).
+The ports and URL are subject to change (although i'll do my best to update the url above).
 
 If you have issues:
 
-1. look into pom.xml to check the port tomcat is running on
+1. look into pom.xml to check the port tomcat is running on (default is 8080)
 
-2. check src/main/webapp/WEB-INF/web.xml or src/main/webapp/WEB-inf/app-servlet.xml to check the servlet mappings
+2. check src/main/webapp/WEB-INF/web.xml or src/main/webapp/WEB-INF/app-servlet.xml to check the servlet mappings
