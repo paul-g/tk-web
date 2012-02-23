@@ -12,8 +12,15 @@ Ext.define('Tkweb.view.task.List', {
         this.columns = [{
             header: 'Id',
             dataIndex: 'id',
-            flex: 1,
-            filterable: true
+            flex: 2,
+            filterable: true,
+			hidden:true,
+        }, {
+            header: 'Revision',
+            dataIndex: 'revision',
+            flex: 2,
+            filterable: true,
+			hidden:true
         }, {
             header: 'Time',
             dataIndex: 'time',
