@@ -1,32 +1,32 @@
 package org.tkweb.model;
 
-import com.google.gson.annotations.Expose;
+import org.ektorp.support.CouchDbDocument;
 
-public class Task {
+public class Task extends CouchDbDocument {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final int UNDEFINED_ID = -1;
-	private int id = UNDEFINED_ID;
-	@Expose
+
 	private String description;
-	@Expose
 	private int time;
-	@Expose
 	private boolean done;
 
+	public Task() {
+		super();
+	}
+
 	public Task(String description, int time, boolean done) {
+		super();
 		this.description = description;
 		this.time = time;
 		this.done = done;
 	}
 
 	public Task(int id, String description, int time) {
-		this.id = id;
+		super();
 		this.description = description;
 		this.time = time;
-	}
-
-	public int getId() {
-		return id;
 	}
 
 	public String getDescription() {
@@ -37,10 +37,6 @@ public class Task {
 		return time;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -49,11 +45,11 @@ public class Task {
 		this.time = time;
 	}
 
-	public boolean idUndefined() {
-		return id == UNDEFINED_ID;
+	public void setDone(boolean done) {
+		this.done = done;
 	}
 
-	public void setIdUndefined() {
-		id = UNDEFINED_ID;
+	public boolean isDone() {
+		return done;
 	}
 }

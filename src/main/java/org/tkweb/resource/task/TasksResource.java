@@ -32,10 +32,8 @@ public class TasksResource extends ServerResource {
 			while (sc.hasNext()) {
 				sb.append(sc.nextLine());
 			}
-			Gson gson = new GsonBuilder()
-					.excludeFieldsWithoutExposeAnnotation().create();
+			Gson gson = new GsonBuilder().create();
 			Task task = gson.fromJson(sb.toString(), Task.class);
-			task.setIdUndefined();
 			TimeKeeperApplication.addTask(task);
 		} catch (IOException e) {
 			e.printStackTrace();
